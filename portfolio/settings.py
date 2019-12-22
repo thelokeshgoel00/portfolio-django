@@ -25,7 +25,7 @@ SECRET_KEY = '1)s5l8%=qm3e#8w*r=pu5-0=$4b&!+4wqjqq(_pg+bky^v&8+)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['EC2_DNS_NAME']
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'jobs.apps.JobsConfig',
     'blog.apps.BlogConfig',
+    
 ]
 
 MIDDLEWARE = [
@@ -49,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'portfolio.urls'
@@ -82,7 +84,7 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': 'pralok00',
         'HOST': 'localhost',
-        'PORT':'5432',
+        'PORT': '5432',
     }
 }
 
@@ -122,8 +124,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-
+STATICFILES_DIRS=[
+    os.path.join(BASE_DIR, 'portfolio/static/')
+]
 STATIC_URL = '/static/'
+STATIC_ROOT =  os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
