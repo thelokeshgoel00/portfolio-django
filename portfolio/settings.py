@@ -25,7 +25,7 @@ SECRET_KEY = '1)s5l8%=qm3e#8w*r=pu5-0=$4b&!+4wqjqq(_pg+bky^v&8+)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['EC2_DNS_NAME']
+ALLOWED_HOSTS = ['3.218.238.68','ec2-3-218-238-68.compute-1.amazonaws.com']
 
 
 # Application definition
@@ -128,7 +128,7 @@ STATICFILES_DIRS=[
     os.path.join(BASE_DIR, 'portfolio/static/')
 ]
 STATIC_URL = '/static/'
-STATIC_ROOT =  os.path.join(BASE_DIR, 'static')
+STATIC_ROOT =  os.path.join(BASE_DIR, 'static/')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
